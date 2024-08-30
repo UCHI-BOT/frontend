@@ -1,0 +1,14 @@
+.info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  gap: var(--spacing-0\.5);
+
+  color: var(--ds-gray-900);
+
+  font-size: 12px;
+  font-weight: 500;
+}

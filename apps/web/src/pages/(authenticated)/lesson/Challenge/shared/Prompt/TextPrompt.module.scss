@@ -1,0 +1,13 @@
+.prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    letter-spacing: 1px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,110 @@
+.lesson {
+  overflow: hidden;
+
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.loading {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100dvw;
+  height: 100dvh;
+
+  background-color: var(--ds-background-100);
+}
+
+.complete {
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100dvw;
+  height: 100dvh;
+
+  background-color: var(--ds-background-100);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: var(--spacing-8);
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    &__title {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    &__subtitle {
+      margin-top: 8px;
+
+      color: var(--ds-gray-900);
+
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+  }
+
+  &__buttons {
+    padding: 0 var(--spacing-4);
+    padding-bottom: calc(20px + var(--lvh, 100vh) - var(--tg-viewport-height, 100vh));
+  }
+}
+
+.summary-card {
+  display: flex;
+
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  width: 110px;
+  height: 60px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--ds-gray-alpha-400);
+  border-radius: var(--rounded-2xl);
+
+  background-color: var(--ds-background-200);
+
+  gap: var(--spacing-2);
+
+  &__text {
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

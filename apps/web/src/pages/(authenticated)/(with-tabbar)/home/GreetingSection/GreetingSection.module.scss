@@ -1,0 +1,22 @@
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2\.5);
+
+  &__heading {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 34px;
+  }
+
+  &__subheading {
+    color: var(--ds-gray-900);
+
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__user {
+    color: var(--ds-violet-700);
+  }
+}

@@ -1,0 +1,14 @@
+.fix {
+  position: fixed;
+  right: 0;
+  bottom: calc(var(--lvh, 100vh) - var(--tg-viewport-height, 100vh));
+  left: 0;
+
+  height: 50px;
+
+  transform: translateZ(0.1);
+  pointer-events: none;
+
+  opacity: 0;
+  background: red;
+}

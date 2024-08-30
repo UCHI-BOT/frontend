@@ -1,0 +1,94 @@
+@import "./reset";
+@import "./colors";
+@import "./variables";
+
+:host,
+body,
+html {
+  overflow: hidden;
+
+  height: var(--dvh, 100vh);
+
+  color: var(--ds-gray-1000);
+  background-color: var(--ds-background-100);
+
+  font-family:
+    "Geist Sans",
+    -apple-system,
+    system-ui,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Noto Sans",
+    sans-serif,
+    Helvetica,
+    "Apple Color Emoji",
+    Arial,
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-synthesis: none;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+
+  max-width: 100vw;
+  height: 100%;
+  margin: 0;
+
+  font-size: 100%;
+}
+
+#root {
+  overflow-y: auto;
+
+  height: 100%;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family:
+    Montserrat,
+    -apple-system,
+    system-ui,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Noto Sans",
+    sans-serif,
+    Helvetica,
+    "Apple Color Emoji",
+    Arial,
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+::selection {
+  color: var(--ds-gray-100);
+  background-color: var(--ds-violet-700);
+}
+
+.wrapper {
+  padding-right: var(--spacing-3\.5);
+  padding-left: var(--spacing-3\.5);
+}
+
+.page:not(.no-padding) {
+  padding-bottom: calc(76px + var(--lvh, 100vh) - var(--tg-viewport-height, 100vh));
+}

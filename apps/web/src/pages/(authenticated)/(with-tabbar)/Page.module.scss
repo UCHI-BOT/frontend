@@ -1,0 +1,12 @@
+.content {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+}
+
+.main {
+  z-index: 0;
+
+  flex: 1;
+}

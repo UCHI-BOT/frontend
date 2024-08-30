@@ -1,0 +1,149 @@
+.layout {
+  --header-height: calc(47px + var(--spacing-2));
+  --indent-height: calc(var(--lvh, 100vh) - var(--tg-viewport-height, 100vh));
+
+  position: absolute;
+  top: calc(47px + var(--spacing-2));
+
+  overflow: hidden;
+
+  width: 100dvw;
+
+  height: calc(100% - var(--header-height));
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: var(--spacing-4);
+
+  padding: 0 var(--spacing-4);
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+  }
+}
+
+.main {
+  display: flex;
+
+  overflow-y: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  height: calc(100% - 80px - var(--indent-height) - 50px);
+
+  gap: var(--spacing-4);
+
+  padding: 0 var(--spacing-4);
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.submit {
+  position: fixed;
+
+  z-index: 10000;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: var(--spacing-2) var(--spacing-4);
+
+  padding-bottom: calc(20px + var(--lvh, 100vh) - var(--tg-viewport-height, 100vh));
+
+  &_ok {
+    --panel-bg: var(--success-background);
+    --panel-text: var(--success-text);
+
+    & button {
+      --themed-fg: var(--ds-gray-100);
+      --themed-bg: var(--success-primary);
+      --themed-active-bg: var(--ds-green-800);
+    }
+  }
+
+  &_wrong {
+    --panel-bg: var(--error-background);
+    --panel-text: var(--error-text);
+
+    & button {
+      --themed-fg: var(--ds-gray-100);
+      --themed-bg: var(--error-primary);
+      --themed-active-bg: var(--ds-red-900);
+    }
+  }
+
+  &__panel {
+    position: fixed;
+
+    z-index: 10000;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: var(--spacing-5) var(--spacing-4);
+
+    padding-bottom: calc(52px + 20px + var(--lvh, 100vh) - var(--tg-viewport-height, 100vh) + var(--spacing-5));
+
+    transition: bottom 0.3s ease;
+
+    border-top: 1px solid var(--ds-gray-400);
+
+    background-color: var(--panel-bg);
+
+    &_closed {
+      bottom: -100%;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-3);
+    }
+
+    &__heading {
+      display: flex;
+      gap: var(--spacing-3);
+
+      align-items: center;
+
+      &__title {
+        color: var(--panel-text);
+
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+
+    &__error-info {
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--spacing-0\.5);
+
+      color: var(--panel-text);
+
+      &__title {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      &__text {
+        text-wrap: pretty;
+
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}

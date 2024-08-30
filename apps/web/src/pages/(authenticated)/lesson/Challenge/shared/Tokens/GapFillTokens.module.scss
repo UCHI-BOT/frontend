@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.tokens {
+  letter-spacing: 1px;
+
+  font-size: 18px;
+
+  font-weight: 500;
+  line-height: 50px;
+}
+
+.token {
+  &_right {
+    color: var(--success-text);
+  }
+}
+
+.line {
+  display: inline-flex;
+
+  width: 90px;
+  margin: 0 8px -2px;
+
+  vertical-align: bottom;
+
+  border-bottom: 2px solid var(--ds-violet-700);
+}

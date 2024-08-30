@@ -1,0 +1,12 @@
+.line {
+  display: inline-flex;
+  justify-content: center;
+
+  width: 40px;
+  margin: 0 4px -2px;
+  padding-bottom: 6px;
+
+  vertical-align: bottom;
+
+  border-bottom: 2px solid var(--ds-violet-700);
+}
