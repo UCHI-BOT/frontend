@@ -5,7 +5,7 @@ import { GetUserProps, UpdateUserProps } from "./types";
 import { UserStats } from "@/models/User";
 
 export const getUser = async ({ id, token }: GetUserProps): Promise<User> => {
-  const { data } = await apiClient.get<User>(`${API_ENDPOINTS.USER}/${id}`, {
+  const { data } = await apiClient.get<User>(`${API_ENDPOINTS.USER}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -14,7 +14,7 @@ export const getUser = async ({ id, token }: GetUserProps): Promise<User> => {
 };
 
 export const updateUser = async ({ id, token, ...body }: UpdateUserProps) => {
-  const { data } = await apiClient.patch(`${API_ENDPOINTS.USER}/${id}`, body, {
+  const { data } = await apiClient.patch(`${API_ENDPOINTS.USER}${id}`, body, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -23,7 +23,7 @@ export const updateUser = async ({ id, token, ...body }: UpdateUserProps) => {
 };
 
 export const getUserStats = async ({ id, token }: GetUserProps): Promise<UserStats> => {
-  const { data } = await apiClient.get<UserStats>(`${API_ENDPOINTS.USER}/${id}/stats`, {
+  const { data } = await apiClient.get<UserStats>(API_ENDPOINTS.STATS, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
