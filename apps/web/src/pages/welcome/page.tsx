@@ -21,8 +21,6 @@ export default function WelcomePage() {
   const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
-    console.log(window.Telegram.WebApp)
-
     cloudStorage
       .getItem(ACCESS_TOKEN_NAME)
       .then((token) => {

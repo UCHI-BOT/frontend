@@ -15,14 +15,12 @@ import { HuggingFaceEmoji } from "@repo/ui/emojis";
 import posthog from "posthog-js";
 
 const SignupScreen: FC = () => {
-  console.log(window.Telegram.WebApp)
-
-  const initData = useInitData();
+  const [initDataUnsafe, initData] = useInitData();
   const navigate = useNavigate();
 
   const [isFocused, setFocused] = useState(false);
 
-  const [username, setUsername] = useState<string>(initData.username ?? "");
+  const [username, setUsername] = useState<string>(initDataUnsafe?.user?.username ?? "");
   const [status, setStatus] = useState<{
     success: boolean;
     error: null | string;
@@ -33,8 +31,6 @@ const SignupScreen: FC = () => {
 
   const handleUsernameCheck = useCallback(
     debounce(async (name: string) => {
-      console.log("SENDING:", initData);
-
       if (cancelTokenRef.current) {
         cancelTokenRef.current.cancel("New request initiated");
       }
@@ -81,8 +77,11 @@ const SignupScreen: FC = () => {
 
   const handleLogin = useCallback(async () => {
     try {
-      console.log(initData);
-      const res = await authTelegramMiniApp(initData);
+      const res = await authTelegramMiniApp({
+        query: initData ?? "",
+        username,
+        avatarUrl: "",
+      });
       await login({ token: res.token, userId: res.user.id });
       posthog.capture("user_signed_up");
       navigate("/home");
